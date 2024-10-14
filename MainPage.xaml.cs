@@ -20,8 +20,6 @@ public partial class MainPage : ContentPage
         
         _words = new List<Word>();
         _curWordIndex = 0;
-
-        DisplayCurWord();
     }
     private void InitializeComponents()
     {
@@ -52,7 +50,7 @@ public partial class MainPage : ContentPage
             Text = "Previous",
             HorizontalOptions = LayoutOptions.Center
         };
-        _prevWordBtn.Clicked += OnPrevWordClicked;
+        //_prevWordBtn.Clicked += OnPrevWordClicked;
         _verticalSL.Children.Add(_prevWordBtn);
 
         _nextWordBtn = new Button
@@ -60,7 +58,7 @@ public partial class MainPage : ContentPage
             Text = "Next",
             HorizontalOptions = LayoutOptions.Center
         };
-        _nextWordBtn.Clicked += OnNextWordClicked;
+        //_nextWordBtn.Clicked += OnNextWordClicked;
         _verticalSL.Children.Add(_nextWordBtn);
 
         _scrollView = new ScrollView
@@ -72,23 +70,23 @@ public partial class MainPage : ContentPage
         Content = _scrollView;
     }
  
-    private void DisplayCurWord()
+/*  private void DisplayCurWord()
     {
         if (_words.Count > 0 && _curWordIndex >= 0 && _curWordIndex < _words.Count)
         {
             var currentWord = _words[_curWordIndex];
 
-            /*_wordLbl.Text = currentWord.WordText;
+            _wordLbl.Text = currentWord.WordText;
             _translationLbl.Text = currentWord.Translation;
             _explanationLbl.Text = currentWord.Explanation;
-            _categoryLbl.Text = currentWord.Category;*/
+            _categoryLbl.Text = currentWord.Category;
         }
         else
         {
-            /*_wordLbl.Text = "No word available.";
+            _wordLbl.Text = "No word available.";
             _translationLbl.Text = "";
             _explanationLbl.Text = "";
-            _categoryLbl.Text = "";*/
+            _categoryLbl.Text = "";
         }
     }
     private void OnPrevWordClicked(object sender, EventArgs e)
@@ -107,6 +105,7 @@ public partial class MainPage : ContentPage
             DisplayCurWord();
         }
     }
+*/
     private async void OnAddWordClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new AddNewWordPage());
