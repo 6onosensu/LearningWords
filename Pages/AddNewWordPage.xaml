@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningWords.Pages.AddNewWordPage"
+             Title="AddNewWordPage">
+    <VerticalStackLayout Spacing="10" Padding="40">
+        <Label 
+            Text="Add New Word"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="33"/>
+
+        <Label Text="Word:" 
+            FontAttributes="Bold"
+            FontSize="28"/>
+        <Entry Placeholder="Enter your word.." 
+               x:Name="wordEntry"
+               VerticalTextAlignment="Center" 
+               Keyboard="Default"/>
+
+        <Label Text="Translation:" 
+            FontAttributes="Bold"
+            FontSize="28"/>
+        <Entry Placeholder="Enter translation.." 
+               x:Name="translationEntry"
+               VerticalTextAlignment="Center" 
+               Keyboard="Default"/>
+
+        <Label Text="Explanation:" 
+            FontAttributes="Bold"
+            FontSize="28"/>
+        <Entry Placeholder="Explanation of the word.." 
+               x:Name="explanationEntry"
+               VerticalTextAlignment="Center" 
+               Keyboard="Default"/>
+
+        <Button Text="ADD" 
+               WidthRequest="160" 
+               HeightRequest="60" 
+               FontAttributes="Bold"
+               Clicked="OnButtonClicked"
+               FontSize="28"
+               BackgroundColor="DarkGoldenrod"
+               TextColor="Snow" />
+
+    </VerticalStackLayout>
+</ContentPage>
