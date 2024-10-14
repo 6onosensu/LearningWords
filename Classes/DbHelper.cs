@@ -18,9 +18,9 @@ namespace LearningWords.Classes
         public async Task<Word> GetWordById(int id) => await _database
             .Table<Word>().FirstOrDefaultAsync(W => W.Id == id);
 
-        public void GetWordsByCategory(string category)
+        public async Task<List<Word>> GetWordsByCategory(string category)
         {
-
+            return await _database.Table<Word>().FirstOrDefaultAsync(W => W.Category == category);
         }
 
         public Task<int> SaveWord(Word word)
