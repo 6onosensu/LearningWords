@@ -53,6 +53,7 @@ public class AllWordsSection : ContentView
                 };
                 _vsl.Children.Add(_wordLbl);
             };
+            return _vsl;
         });
 
         Content = new VerticalStackLayout() { label, carouselView, indicatorView };
