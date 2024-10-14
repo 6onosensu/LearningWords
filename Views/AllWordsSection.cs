@@ -3,14 +3,14 @@ using LearningWords.Models;
 namespace LearningWords.Views;
 public class AllWordsSection : ContentView
 {
-    VerticalStackLayout vsl;
-	List<Word> words;
+    VerticalStackLayout _vsl;
+	List<Word> _words;
     Label _wordLbl;
     public AllWordsSection()
 	{
         Label label = new Label
         {
-            Text = $"All Words ({words.Count()}):",
+            Text = $"All Words ({_words.Count()}):",
             FontSize = 25,
             FontAttributes = FontAttributes.Bold,
         };
@@ -41,21 +41,17 @@ public class AllWordsSection : ContentView
         };
 
         carouselView.ItemTemplate = new DataTemplate(() =>
-        { 
-            for (int i = 0; i < words.Count; i++)
+        {
+            _vsl = new VerticalStackLayout();
+            for (int i = 0; i < _words.Count; i++)
             {
                 _wordLbl = new Label
                 {
-                    Text = words[i].ToString(),
+                    Text = _words[i].ToString(),
                     FontSize = 16,
                     Margin = 10,
-                }; 
-                HorizontalStackLayout hsl = new HorizontalStackLayout
-                {
-                    Children = {
-                        _wordLbl,
-                    }
                 };
+                _vsl.Children.Add(_wordLbl);
             };
         });
 
